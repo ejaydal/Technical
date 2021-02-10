@@ -1,0 +1,66 @@
+body {
+  line-height: 2em;
+  font-family: monospace;
+  font-size: 15px;
+  background:url(cod.jpg) no-repeat;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#navbar {
+  border-right: solid;
+  border-left: solid;
+  border-color: #ff872b;
+  position: fixed;  
+  left: 0;
+  height: 100%;
+  width: 23%;
+}
+
+.nav-link {
+  list-style: none;
+  line-height: 40px;
+  display: block;
+  padding: 5px;
+  border: 2px solid #ddd;
+}
+
+.highlight {
+  background-color: #ffb887;
+  display: inline-block;
+  margin: 8px 0px;
+  padding: 5px;
+  width: 100%;
+  box-shadow: 5px 10px 18px #ff9e5c;
+}
+
+code {
+  font-size: 1.5rem;
+}
+
+header {
+  font-size: 2.4rem;
+  line-height: 50px;
+  padding: 5px 0px;
+  font-family: cursive;
+}
+
+#main-doc {
+  margin-left: 25%;
+  padding: 5px;
+}
+
+@media screen and (max-width: 500px) { 
+  body {
+    grid-template-cloumns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+}  
+
+#navbar > a {
+  text-decoration: none;
+  color: #000;
+}
+
+

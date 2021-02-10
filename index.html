@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TECHNICAL PAGE</title>
+  <link rel="stylesheet" type="text/css" href="Tech.css">
+</head>
+<body>
+
+<nav id="navbar">
+  <header>BASH SCRIPT</header>
+  <a class="nav-link" href="#what-is-bash-and-shell" rel="internal"><li>Bash and Shell</li></a>
+  <a class="nav-link" href="#Echo" rel="internal"><li>Echo Command</li></a>        
+  <a class="nav-link" href="#Multi-line" rel="internal"><li>Multi-line Comment</li></a>
+  <a class="nav-link" href="#While" rel="internal"><li>While Loop</li></a>
+  <a class="nav-link" href="#For" rel="internal"><li>For Loop</li></a>
+  <a class="nav-link" href="#User" rel="internal"><li>User Input</li></a>
+  <a class="nav-link" href="#if" rel="internal"><li>If Statement</li></a>
+  <a class="nav-link" href="#and" rel="internal"><li>And Condition If Statement</li></a>
+  <a class="nav-link" href="#or" rel="internal"><li>Or Condition If Statement</li></a>
+  <a class="nav-link" href="#else-if-and-else" rel="internal"><li>Else If and Else Condition</li></a>
+  
+
+</nav>
+
+<main id="main-doc">
+
+  <!------------------  SECTION 1 --------------------->
+   <section class="main-section" id="what-is-bash-and-shell">
+     <header>What is Bash and a Shell</header>
+       <article>
+        <p><strong>Bash</strong> is the shell, or command language interpreter, for the GNU operating system. The name is an acronym for the ‘Bourne-Again SHell’, a pun on Stephen Bourne, the author of the direct ancestor of the current Unix shell sh, which appeared in the Seventh Edition Bell Labs Research version of Unix.
+        <br><br>
+        <strong>Bash</strong> is largely compatible with sh and incorporates useful features from the Korn shell ksh and the C shell csh. It is intended to be a conformant implementation of the IEEE POSIX Shell and Tools portion of the IEEE POSIX specification (IEEE Standard 1003.1). It offers functional improvements over sh for both interactive and programming use.
+        <br><br>
+        While the GNU operating system provides other shells, including a version of csh, Bash is the default shell. Like other GNU software, Bash is quite portable. It currently runs on nearly every version of Unix and a few other operating systems - independently-supported ports exist for MS-DOS, OS/2, and Windows platforms. </p>
+ 
+ <br>
+
+      <p>
+      A Unix <strong>shell</strong> is both a command interpreter and a programming language. As a command interpreter, the shell provides the user interface to the rich set of GNU utilities. The programming language features allow these utilities to be combined. Files containing commands can be created, and become commands themselves. These new commands have the same status as system commands in directories such as /bin, allowing users or groups to establish custom environments to automate their common tasks.
+      <br><br>
+      Shells may be used interactively or non-interactively. In interactive mode, they accept input typed from the keyboard. When executing non-interactively, shells execute commands read from a file.
+      <br><br>
+      A <strong>shell</strong> allows execution of GNU commands, both synchronously and asynchronously. The shell waits for synchronous commands to complete before accepting more input; asynchronous commands continue to execute in parallel with the shell while it reads and executes additional commands. The redirection constructs permit fine-grained control of the input and output of those commands. Moreover, the shell allows control over the contents of commands’ environments.</p>
+
+     
+         <p class="highlight">Hello World</p>
+         <p>You can run bash script from the terminal or by executing any bash file. Run the following command from the terminal to execute a very simple bash statement. The output of the command will be <strong>‘Hello World’</strong>.</p>
+
+         <p>Run the file with bash command.</p>
+         <code class="highlight">Example: $ echo "Hello World"</code>
+
+         <img class="hellow" src="h.png"><br>
+     </article>
+    </section>
+
+
+<!------------------  SECTION 2 --------------------->
+     <section class="main-section" id="Echo">
+     <header>Echo Command</header>
+     <article>
+        <p>You can use echo command with various options. Some useful options are mentioned in the following example. When you use <strong>‘echo’</strong> command without any option then a newline is added by default. ‘-n’ option is used to print any text without new line and ‘-e’ option is used to remove backslash characters from the output. Create a new bash file with a name, ‘echo_example.sh’ and add the following script. </p>
+
+      <code class="highlight"> #!/bin/bash<br>
+        echo "Printing text with newline"<br>
+        echo -n "Printing text without newline"<br>
+        echo -e "\nRemoving \t backslash \t characters\n"</code>
+       
+        <p>Run the file with bash command.</p>
+    <code class="highlight">$ bash echo_example.sh</code>
+        <img class="hellow" src="ec.png"><br>
+     </article>
+    </section>
+
+
+<!------------------  SECTION 3 --------------------->
+     <section class="main-section" id="Multi-line">
+     <header>Multi-line Comment</header>
+     <article>
+       <p>You can use <strong>multi line</strong> comment in bash in various ways. A simple way is shown in the following example. Create a new bash named, ‘multiline-comment.sh’ and add the following script. Here, ‘:’ and “ ’ ” symbols are used to add multiline comment in bash script. This following script will calculate the square of 5.</p>
+       
+      <code class="highlight">#!/bin/bash<br>
+                                : '<br>
+                                The following script calculates<br>
+                                the square value of the number, 5.<br>
+                                '<br>
+                                ((area=5*5))<br>
+                                echo $area</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash multiline-comment.sh</code>
+
+      <img class="hellow" src="mt.png"><br>
+
+    </article>
+    </section>
+
+
+<!------------------  SECTION 4 --------------------->
+  <section class="main-section" id="While">
+     <header>While Loop</header>
+       <article>
+       <p>Create a bash file with the name, <strong>‘while_example.sh’</strong>, to know the use of while loop. In the example, while loop will iterate for 5 times. The value of count variable will increment by 1 in each step. When the value of count variable will 5 then the while loop will terminate.</p>
+       
+      <code class="highlight">#!/bin/bash<br>
+                              valid=true<br>
+                              count=1<br>
+                              while [ $valid ]<br>
+                              do<br>
+                              echo $count<br>
+                              if [ $count -eq 5 ];<br>
+                              then<br>
+                              break<br>
+                              fi<br>
+                              ((count++))<br>
+                              done</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash while_example.sh</code>
+
+      <img class="hellow" src="wh.png"><br>
+
+    </article>
+    </section>
+
+
+<!------------------  SECTION 5 --------------------->
+  <section class="main-section" id="For">
+     <header>For Loop</header>
+       <article>
+       <p>The basic <strong>for</strong> loop declaration is shown in the following example. Create a file named ‘for_example.sh’ and add the following script using for loop. Here, for loop will iterate for 10 times and print all values of the variable, counter in single line.</p>
+       
+      <code class="highlight">#!/bin/bash<br>
+                              for (( counter=10; counter>0; counter-- ))<br>
+                              do<br>
+                              echo -n "$counter "<br>
+                              done<br>
+                              printf "\n"</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash for_example.sh</code>
+
+      <img class="hellow" src="fr.png"><br>
+
+    </article>
+    </section>
+
+
+<!------------------  SECTION 6 --------------------->
+<section class="main-section" id="User">
+     <header>User Input</header>
+       <article>
+       <p><strong>‘read’</strong> command is used to take input from user in bash. Create a file named ‘user_input.sh’ and add the following script for taking input from the user. Here, one string value will be taken from the user and display the value by combining other string value.</p>
+       
+      <code class="highlight">#!/bin/bash<br>
+                              echo "Enter Your Name"<br>
+                              read name<br>
+                              echo "Welcome $name to LinuxHint"</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash user_input.sh</code>
+
+      <img class="hellow" src="us.png"><br>
+
+    </article>
+    </section>
+
+<!------------------  SECTION 7 --------------------->
+
+<section class="main-section" id="if">
+     <header>If Statement</header>
+       <article>
+       <p>You can use if condition with single or multiple conditions. Starting and ending block of this statement is define by <strong>‘if’</strong> and <strong>‘fi’</strong>. Create a file named ‘simple_if.sh’ with the following script to know the use if statement in bash. Here, 10 is assigned to the variable, n. if the value of $n is less than 10 then the output will be “It is a one digit number”, otherwise the output will be “It is a two digit number”. For comparison, ‘-lt’ is used here. For comparison, you can also use ‘-eq’ for equality, ‘-ne’ for not equality and ‘-gt’ for greater than in bash script.</p>
+       
+      <code class="highlight">#!/bin/bash<br>
+                              n=10<br>
+                              if [ $n -lt 10 ];<br>
+                              then<br>
+                              echo "It is a one digit number"<br>
+                              else<br>
+                              echo "It is a two digit number"<br>
+                              fi</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash simple_if.sh</code>
+
+      <img class="hellow" src="if.png"><br>
+
+    </article>
+    </section>
+
+<!------------------  SECTION 8 --------------------->
+
+<section class="main-section" id="and">
+     <header>And Condition If Statement</header>
+       <article>
+       <p>Different types of logical conditions can be used in if statement with two or more conditions. How you can define multiple conditions in if statement using AND logic is shown in the following example. <strong>‘&&’</strong> is used to apply AND logic of if statement. Create a file named ‘if_with_AND.sh’ to check the following code. Here, the value of username and password variables will be taken from the user and compared with ‘admin’ and ‘secret’. If both values match then the output will be “valid user”, otherwise the output will be “invalid user”.</p>
+       
+      <code class="highlight">!/bin/bash<br><br>
+
+                                echo "Enter username"<br>
+                                read username<br>
+                                echo "Enter password"<br>
+                                read password<br><br>
+
+                                if [[ ( $username == "admin" && $password == "secret" ) ]]; then<br>
+                                echo "valid user"<br>
+                                else<br>
+                                echo "invalid user"<br>
+                                fi</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash if_with_AND.sh</code>
+
+      <img class="hellow" src="and.png"><br>
+
+    </article>
+    </section>
+
+<!------------------  SECTION 9 --------------------->
+
+<section class="main-section" id="or">
+     <header>If Statement</header>
+       <article>
+       <p><strong>‘||’</strong> is used to define OR logic in if condition. Create a file named ‘if_with_OR.sh’ with the following code to check the use of OR logic of if statement. Here, the value of n will be taken from the user. If the value is equal to 15 or 45 then the output will be “You won the game”, otherwise the output will be “You lost the game”.</p>
+       
+      <code class="highlight">#!/bin/bash<br><br>
+
+                              echo "Enter any number"<br>
+                              read n<br><br>
+
+                              if [[ ( $n -eq 15 || $n  -eq 45 ) ]]<br>
+                              then<br>
+                              echo "You won the game"<br>
+                              else<br>
+                              echo "You lost the game"<br>
+                              fi</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash if_with_OR.sh</code>
+
+      <img class="hellow" src="or.png"><br>
+
+    </article>
+    </section>
+<!------------------  SECTION 10 --------------------->
+
+<section class="main-section" id="else-if-and-else">
+     <header>Else If and Else Condition</header>
+       <article>
+       <p>The use of <strong>else if</strong> condition is little different in bash than other programming language. ‘elif’ is used to define else if condition in bash. Create a file named, ‘elseif_example.sh’ and add the following script to check how else if is defined in bash script.</p>
+       
+      <code class="highlight">#!/bin/bash<br><br>
+
+                              echo "Enter your lucky number"
+                              read n<br><br>
+
+                              if [ $n -eq 101 ];<br>
+                              then<br>
+                              echo "You got 1st prize"<br>
+                              elif [ $n -eq 510 ];<br>
+                              then<br>
+                              echo "You got 2nd prize"<br>
+                              elif [ $n -eq 999 ];<br>
+                              then<br>
+                              echo "You got 3rd prize"<br><br>
+
+                              else<br>
+                              echo "Sorry, try for the next time"<br>
+                              fi</code>
+
+      <p>Run the file with bash command.</p>
+
+      <code class="highlight">$ bash elseif_example.sh</code>
+
+      <img class="hellow" src="elseif.png"><br>
+
+    </article>
+    </section>
+
+    <br> <br> 
+    <a id="technical-link" href="https://linuxhint.com/30_bash_script_examples/#t8" target="_blank">Bash Script Examples</a>
+  </main>
+ 
+
+</body>
+</html>
